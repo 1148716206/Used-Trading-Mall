@@ -13,6 +13,7 @@ const Trade = () => {
       git status
       git commit -m 'XXX'
       git push --set-upstream origin master
+      1
     </div>
   )
 }
