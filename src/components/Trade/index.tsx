@@ -8,6 +8,7 @@ const Trade = () => {
       <div>交易大厅</div>
       <div>交易大厅</div>
       <div>交易大厅</div>
+      <div>交易大厅</div>
     </div>
   )
 }
