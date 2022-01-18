@@ -24,7 +24,10 @@
     "react": "17.x",
     "react-dom": "17.x",
     "umi": "^3.5.20",
-    "swiper": "^7.0.9"
+    "swiper": "^7.0.9",
+    "axios": "^0.21.1",
+    "qs": "^6.10.1",
+    "@types/qs": "^6.9.7"
   },
   "devDependencies": {
     "@types/react": "^17.0.0",
