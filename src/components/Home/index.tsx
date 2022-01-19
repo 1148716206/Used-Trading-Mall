@@ -12,17 +12,17 @@ const Home = () => {
   const [updateLoading, setUpdateLoading] = useState(false);
 
 
-  const [imagesData, setImagesData] = useState()
+  const [goodsList, setGoodsList] = useState([])
 
-  const loadDataSource = async () => {
+  const getGoodsList = async () => {
     const result: any = await request.get('api/getGoodsInfo')
 
-    console.log('result', result.data.msg[0].address)
-    setImagesData(result.data.msg[0].address)
+    console.log('result', result.data.data)
+    setGoodsList(result.data.data)
   };
 
   useEffect(() => {
-    loadDataSource()
+    getGoodsList()
   }, [])
 
 
@@ -32,7 +32,7 @@ const Home = () => {
       return false;
     }
 
-    if (file.size > 3 * 1024 * 1024) {
+    if (file.size > 4 * 1024 * 1024) {
       message.error('上传图片大小超过 3MB');
       return false;
     }
@@ -58,9 +58,6 @@ const Home = () => {
     }
     if (file.status === 'done') {
       message.success('图片上传成功');
-      console.log('file',file)
-      console.log('file',file.response)
-      console.log('file',file.response.url)
       // setManagerInfoModal({
       //   avatar: `${formAction.filepath}${file.response.url}`,
       // });
@@ -101,7 +98,32 @@ const Home = () => {
             <span className={styles.recommend__title__desc}>为你甄选最合适的</span>
           </div>
           <div className={styles.recommend__list}>
-            <img src={imagesData} alt=""/>
+            {
+              goodsList ? goodsList.map((item: any) => (
+                <div className={styles.goods}>
+                  <div>
+                    <img src={item.address} alt=""/>
+                  </div>
+                  <div className={styles.product_info}>
+                    <p className={styles.product_info__title}>
+                      自由港湾，智能自主入住湖景房
+                    </p>
+                    <p className={styles.product_info__new_price}>
+                      <span className={styles.price_icon}>
+                        ￥
+                      </span>
+                      {item.newPrice}
+                      <span className={styles.product_info__old_price}>
+                        <span className={styles.price_icon}>
+                          ￥
+                        </span>
+                        {item.oldPrice}
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              )) : null
+            }
           </div>
         </div>
         <Button onClick={() => {
