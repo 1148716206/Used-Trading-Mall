@@ -35,6 +35,12 @@ const routes: Route[] = [
         path: '/trade',
         component: '@/components/Trade/index.tsx',
       },
+      {
+        title: `${WEB_NAME}-商品详情`,
+        name: '商品详情',
+        path: '/detail',
+        component: '@/components/Detail/index.tsx',
+      },
     ]
   },
 ]

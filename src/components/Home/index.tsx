@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import styles from './index.less'
 import request from '@/http';
+import { Link } from 'react-router-dom'
 import {Input, Button,Upload, Carousel,Modal,message} from 'antd'
 import {SearchOutlined} from '@ant-design/icons'
 const { Dragger } = Upload;
@@ -33,7 +34,7 @@ const Home = () => {
     }
 
     if (file.size > 4 * 1024 * 1024) {
-      message.error('上传图片大小超过 3MB');
+      message.error('上传图片大小超过 4MB');
       return false;
     }
     console.log('file',file)
@@ -100,28 +101,30 @@ const Home = () => {
           <div className={styles.recommend__list}>
             {
               goodsList ? goodsList.map((item: any) => (
-                <div className={styles.goods}>
-                  <div>
-                    <img src={item.address} alt=""/>
-                  </div>
-                  <div className={styles.product_info}>
-                    <p className={styles.product_info__title}>
-                      自由港湾，智能自主入住湖景房
-                    </p>
-                    <p className={styles.product_info__new_price}>
+                <Link to={{ pathname: '/detail', query: { key: 'xxx' } }} >
+                  <div className={styles.goods}>
+                    <div>
+                      <img src={item.address} alt=""/>
+                    </div>
+                    <div className={styles.product_info}>
+                      <p className={styles.product_info__title}>
+                        自由港湾，智能自主入住湖景房
+                      </p>
+                      <p className={styles.product_info__new_price}>
                       <span className={styles.price_icon}>
                         ￥
                       </span>
-                      {item.newPrice}
-                      <span className={styles.product_info__old_price}>
+                        {item.newPrice}
+                        <span className={styles.product_info__old_price}>
                         <span className={styles.price_icon}>
                           ￥
                         </span>
-                        {item.oldPrice}
+                          {item.oldPrice}
                       </span>
-                    </p>
+                      </p>
+                    </div>
                   </div>
-                </div>
+                </Link>
               )) : null
             }
           </div>
@@ -133,13 +136,13 @@ const Home = () => {
       <Modal
         visible={editShow}
         onCancel={() => setEditShow(false)}
-        title="管理员信息"
+        title="添加商品信息"
         width={450}
         footer={null}
       >
         <div className={styles.edit_box}>
           <div className={styles.edit_box_line}>
-            <span className={styles.tt}>头像:</span>
+            <span className={styles.tt}>图片:</span>
             <span className={styles.ct}>
                 <Dragger
                   name="file"
@@ -171,7 +174,7 @@ const Home = () => {
             </span>
           </div>
           <div className={styles.line}>
-            <span className={styles.tt} style={{verticalAlign: 'middle'}}>昵称:</span>
+            <span className={styles.tt} style={{verticalAlign: 'middle'}}>描述:</span>
             <span className={styles.ct}>
             <Input
               style={{width: 200, marginRight: 10}}
