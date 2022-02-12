@@ -17,7 +17,14 @@ const routes: Route[] = [
     name: '登录',
     path: '/login',
     component: '@/components/Login/index'
-  }, {
+  },
+  {
+    title: `${WEB_NAME}-注册`,
+    name: '注册',
+    path: '/register',
+    component: '@/components/Register/index'
+  },
+  {
     title: `${WEB_NAME}-首页`,
     name: '首页',
     path: '/',

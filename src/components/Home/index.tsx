@@ -101,7 +101,7 @@ const Home = () => {
           <div className={styles.recommend__list}>
             {
               goodsList ? goodsList.map((item: any) => (
-                <Link to={{ pathname: '/detail', query: { key: 'xxx' } }} >
+                <Link to={{ pathname: '/detail', query: { key: '123' } }} >
                   <div className={styles.goods}>
                     <div>
                       <img src={item.address} alt=""/>

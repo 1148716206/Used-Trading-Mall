@@ -17,8 +17,16 @@ const Index = () => {
             <Link to='/index'>购物车</Link>
           </div>
           <div className={styles.desc}>
-            <span className={styles.desc__login}>你好，请登录</span>
-            <span className={styles.desc__register}>免费注册</span>
+            <span className={styles.desc__login}>您好，
+              <Link to="login">
+                请登录!
+              </Link>
+            </span>
+            <span className={styles.desc__register}>
+              <Link to="register?key=register" style={{color: "red"}} >
+                免费注册!
+              </Link>
+            </span>
             <span>咨询热线：17602382858（9:00-18：00）</span>
           </div>
 
