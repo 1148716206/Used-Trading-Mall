@@ -9,9 +9,7 @@ const Index = (props:any) => {
     <div className={styles.wrapper}>
       <Layout className="layout">
         <Header/>
-        <div >
           {props.children}
-        </div>
         <Footer/>
       </Layout>
     </div>

@@ -14,7 +14,7 @@ const Index = () => {
           <div className={styles.nav}>
             <Link to='/home'>首页</Link>
             <Link to='/trade'>交易大厅</Link>
-            <Link to='/index'>购物车</Link>
+            <Link to='/cart'>购物车</Link>
           </div>
           <div className={styles.desc}>
             <span className={styles.desc__login}>您好，

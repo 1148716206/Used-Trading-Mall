@@ -48,6 +48,12 @@ const routes: Route[] = [
         path: '/detail',
         component: '@/components/Detail/index.tsx',
       },
+      {
+        title: `${WEB_NAME}-购物车`,
+        name: '购物车',
+        path: '/cart',
+        component: '@/components/Cart/index.tsx',
+      },
     ]
   },
 ]
