@@ -10,14 +10,14 @@ import { ExclamationCircleOutlined } from '@ant-design/icons';
 
 const login = () => {
   const [data,setData] = useState(1)
-  const activeKey = this.props.location.search
+  // const activeKey = this.props.location.search
   return (
     <div className={styles.login_body}>
       <div className={styles.login_content}>
         <div className={styles.login_panel}>
           <h1 className={styles.login_title}>登录</h1>
           <Tabs
-            defaultActiveKey={activeKey || 'style'}
+            // defaultActiveKey={activeKey || 'style'}
           >
             <TabPane
               tab="密码登录"
